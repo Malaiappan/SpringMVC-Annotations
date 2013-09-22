@@ -1,6 +1,16 @@
+# Maven generated files
+target/
+MANIFEST.MF
+overlays/
+
+# Compiled files
 *.class
 
-# Package Files #
+# Packages
 *.jar
-*.war
-*.ear
+*.zip
+
+# Eclipse files
+*.classpath
+*.project
+*.settings
