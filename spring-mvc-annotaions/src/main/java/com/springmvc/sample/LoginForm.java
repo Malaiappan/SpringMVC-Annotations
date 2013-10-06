@@ -1,7 +1,4 @@
-/*
- * Copyright (c) KLM Royal Dutch Airlines. All Rights Reserved.
- * ============================================================
- */
+
 
 package com.springmvc.sample;
 
