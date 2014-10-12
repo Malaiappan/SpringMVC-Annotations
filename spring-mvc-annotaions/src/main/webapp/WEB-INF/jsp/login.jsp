@@ -8,9 +8,10 @@
 <title>Spring MVC Form Handling</title>
 </head>
 <body>
+<h1>${errorMessage}</h1>
 
 	<h2>Form details</h2>
-	<form method="POST" action="/springmvc/main/login/submitt">
+	<form method="POST" action="/mvcsample/main/login/submitt">
 		<table>
 			<tr>
 				<td>User Name</td>
