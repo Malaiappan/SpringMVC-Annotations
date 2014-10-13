@@ -21,6 +21,27 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="messageConverters">
+			<list>			
+				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+					<property name="objectMapper" ref="jacksonObjectMapper" />
+					<!-- <constructor-arg>
+						<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+							
+							<property name="annotatedClasses">
+								<list>
+									<value>com.learn.mvc.modal.Customer</value>							
+									<value>com.learn.mvc.modal.Link</value>							
+								</list>						
+							</property>
+						</bean>
+					</constructor-arg> -->
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
 	 <!-- Configure to plugin JSON as request and response in method handler -->
 <!--     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"> -->
 <!--         <property name="messageConverters"> -->
@@ -33,5 +54,9 @@
 <!--     Configure bean to convert JSON to POJO and vice versa -->
 <!--     <bean id="jsonMessageConverter" class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter"> -->
 <!--     </bean> -->
+
+<bean id="jacksonObjectMapper"
+        class="org.codehaus.jackson.map.ObjectMapper" />
+	
 
 </beans>
