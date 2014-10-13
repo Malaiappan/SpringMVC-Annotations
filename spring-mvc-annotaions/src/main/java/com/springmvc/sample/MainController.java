@@ -1,6 +1,7 @@
 
 package com.springmvc.sample;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -57,6 +59,19 @@ public class MainController {
     public String getLoginForm() {
 
         return "login";
+    }
+    
+    /**
+     * Get the form as json
+     * @return the loging form
+     */
+    @RequestMapping(value = "/login/form", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public LoginForm getForm() {
+    	LoginForm loginForm = new LoginForm();
+    	loginForm.setUserName("userName");
+    	loginForm.setPassWord("****");
+		return loginForm;
     }
 
     /**
@@ -113,7 +128,7 @@ public class MainController {
      * 
      * @return the model attribute
      */
-    @ModelAttribute("spring")
+    @ModelAttribute("common")
     public String getModelAttribute() {
 
         return "spring";
