@@ -74,6 +74,12 @@ public class MainController {
 		return loginForm;
     }
 
+    @RequestMapping(value = "/passenger", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Passenger getPassenger() {
+		return new Passenger("asdf", "asdf");
+    }
+    
     /**
      * Validate login.<br>
      * Sample usage of {@code @RequestParam} and {@code ModelAndView}
