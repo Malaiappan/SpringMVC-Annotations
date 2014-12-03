@@ -15,9 +15,9 @@ public class TranslationAspect {
 		System.out.println("in");
 	}
 
-//	@Before("execution(* com.springmvc.sample.MainController.getPassenger(..))")
+	@Before("execution(@com.springmvc.sample.Translatable * *(..))")
 	public void doBeforeTask(JoinPoint joinPoint) {
-		System.out.println("before");
+		System.out.println("aop through annotation");
 	}
 
 	@Around("execution(* com.springmvc.sample.MainController.getPassenger(..))")

@@ -80,6 +80,13 @@ public class MainController {
 		return new Passenger("asdf", "asdf");
     }
     
+	@RequestMapping(value = "/passenger1", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	@Translatable
+	public Passenger getPassenger1() {
+		return new Passenger("asdf", "asdf");
+	}
+
     /**
      * Validate login.<br>
      * Sample usage of {@code @RequestParam} and {@code ModelAndView}
