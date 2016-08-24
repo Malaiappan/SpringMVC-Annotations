@@ -14,3 +14,7 @@ overlays/
 *.classpath
 *.project
 *.settings
+
+# Idea files
+.idea/
+*.iml
